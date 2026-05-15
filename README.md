@@ -90,13 +90,23 @@ flowchart TD
 
 ![ContextRouter routing board](public/screenshots/routing-board.png)
 
-### Source Inspection
+### Source Inspection & Rewrite Actions
 
-![ContextRouter source inspection detail panel](public/screenshots/source-inspection.png)
-
-### Rewrite Actions
-
-![ContextRouter rewrite actions](public/screenshots/rewrite-actions.png)
+<table align="center" width="100%">
+  <tr>
+    <td align="center" width="50%">
+      <img src="public/screenshots/source-inspection.png" alt="ContextRouter source inspection detail panel" width="100%">
+      <br>
+      <sub><b>Source Inspection</b></sub>
+    </td>
+    <td width="32"></td>
+    <td align="center" width="50%">
+      <img src="public/screenshots/rewrite-actions.png" alt="ContextRouter rewrite actions" width="100%">
+      <br>
+      <sub><b>Rewrite Actions</b></sub>
+    </td>
+  </tr>
+</table>
 
 ### Responsive Views
 
