@@ -1,9 +1,6 @@
 # ContextRouter
 
-![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js) ![React](https://img.shields.io/badge/React-19-61dafb?logo=react) ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?logo=typescript) ![Tailwind](https://img.shields.io/badge/Tailwind-4-38bdf8?logo=tailwindcss) ![Vercel AI SDK](https://img.shields.io/badge/Vercel%20AI%20SDK-black?logo=vercel) ![Zod](https://img.shields.io/badge/Zod-4-3068b7) ![Neon](https://img.shields.io/badge/Neon-Postgres-00e599) ![License](https://img.shields.io/badge/license-MIT-blue)
-
-> **Turn your daily founder dump into routed, source-backed outputs. Not another AI slop generator.**
-
+> **Turn messy founder notes into posts, follow-ups, tasks, updates, and private warnings.**
 
 <p>
   <a href="https://context-router.vercel.app/">
@@ -209,3 +206,18 @@ This is an MVP focused on the routing loop. It proves whether a raw daily dump c
 </p>
 
 <p align="center"><i>Pick a sample dump from the dropdown to see routing in action.</i></p>
+
+---
+
+<p align="center"><sub>Built with</sub></p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-16-black?logo=next.js" alt="Next.js"/>
+  <img src="https://img.shields.io/badge/React-19-61dafb?logo=react" alt="React"/>
+  <img src="https://img.shields.io/badge/TypeScript-5-3178c6?logo=typescript" alt="TypeScript"/>
+  <img src="https://img.shields.io/badge/Tailwind-4-38bdf8?logo=tailwindcss" alt="Tailwind"/>
+  <img src="https://img.shields.io/badge/Vercel%20AI%20SDK-black?logo=vercel" alt="Vercel AI SDK"/>
+  <img src="https://img.shields.io/badge/Zod-4-3068b7" alt="Zod"/>
+  <img src="https://img.shields.io/badge/Neon-Postgres-00e599" alt="Neon Postgres"/>
+  <img src="https://img.shields.io/badge/license-MIT-blue" alt="License"/>
+</p>
