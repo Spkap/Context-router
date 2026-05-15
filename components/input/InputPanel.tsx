@@ -1,4 +1,5 @@
 import type { HistoryEntry } from "@/lib/history/localHistory";
+import type { SampleContext } from "@/lib/sample-data";
 import type { Mode } from "@/lib/types";
 import { DailyDumpTextarea } from "./DailyDumpTextarea";
 import { ModeSelector } from "./ModeSelector";
@@ -12,10 +13,11 @@ type InputPanelProps = {
   mode: Mode;
   isRouting: boolean;
   history: HistoryEntry[];
+  samples: SampleContext[];
   onDailyDumpChange: (value: string) => void;
   onVoiceSamplesChange: (value: string) => void;
   onModeChange: (value: Mode) => void;
-  onUseSample: () => void;
+  onUseSample: (sampleId: string) => void;
   onRoute: () => void;
   onLoadHistory: (entry: HistoryEntry) => void;
 };
@@ -26,6 +28,7 @@ export function InputPanel({
   mode,
   isRouting,
   history,
+  samples,
   onDailyDumpChange,
   onVoiceSamplesChange,
   onModeChange,
@@ -39,7 +42,7 @@ export function InputPanel({
     <aside className="flex flex-col gap-4 p-4">
       {/* Utility row — compact secondary actions */}
       <div className="flex items-center gap-2 border-b border-border-subtle pb-3">
-        <SampleDataButton onUseSample={onUseSample} />
+        <SampleDataButton samples={samples} onUseSample={onUseSample} />
         {history.length > 0 ? (
           <select
             aria-label="Recent runs"

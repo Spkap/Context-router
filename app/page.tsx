@@ -14,7 +14,7 @@ import {
   saveRun,
   type HistoryEntry,
 } from "@/lib/history/localHistory";
-import { SAMPLE_DAILY_DUMP, SAMPLE_VOICE } from "@/lib/sample-data";
+import { DEFAULT_SAMPLE_CONTEXT, SAMPLE_CONTEXTS } from "@/lib/sample-data";
 import type { RewriteCardResponse } from "@/lib/schemas/rewrite.schema";
 import type {
   ApiResponse,
@@ -132,10 +132,14 @@ export default function Home() {
 
   const selectedCard = findCard(routingResult, selectedCardId);
 
-  function useSample() {
-    setDailyDump(SAMPLE_DAILY_DUMP);
-    setVoiceSamples(SAMPLE_VOICE);
-    setMode("founder");
+  function useSample(sampleId: string) {
+    const sample =
+      SAMPLE_CONTEXTS.find((context) => context.id === sampleId) ||
+      DEFAULT_SAMPLE_CONTEXT;
+
+    setDailyDump(sample.dailyDump);
+    setVoiceSamples(sample.voiceSamples);
+    setMode(sample.mode);
     setError(null);
   }
 
@@ -245,6 +249,7 @@ export default function Home() {
             mode={mode}
             isRouting={isRouting}
             history={history}
+            samples={SAMPLE_CONTEXTS}
             onDailyDumpChange={setDailyDump}
             onVoiceSamplesChange={setVoiceSamples}
             onModeChange={setMode}

@@ -1,5 +1,6 @@
-import type { Card } from "@/lib/types";
 import { CheckCircle2, AlertTriangle, XCircle } from "lucide-react";
+import type { Card } from "@/lib/types";
+
 type QualityScoresProps = {
   card: Card;
 };
@@ -25,7 +26,7 @@ export function QualityScores({ card }: QualityScoresProps) {
             Icon = AlertTriangle;
             iconColor = "text-amber-500";
           } else if (value === "high" || value === "low") {
-            // Note: depends on if high is bad (risk) or good (specificity). 
+            // Note: depends on if high is bad (risk) or good (specificity).
             // In typical scores: high risk = bad, high specificity = good.
             if (key.toLowerCase().includes("risk") && value === "high") {
               Icon = XCircle;
@@ -42,6 +43,7 @@ export function QualityScores({ card }: QualityScoresProps) {
                 {labelMap[key as keyof typeof labelMap]}
               </span>
               <div className="flex items-center gap-1.5 font-medium capitalize text-text-primary">
+                <Icon className={"h-3.5 w-3.5 " + iconColor} />
                 {value}
               </div>
             </div>
