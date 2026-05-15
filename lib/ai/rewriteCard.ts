@@ -1,4 +1,3 @@
-import { openai } from "@ai-sdk/openai";
 import { generateObject } from "ai";
 import { BUCKET_ORDER } from "../bucket-config";
 import type { Buckets } from "../schemas/routeContext.schema";
@@ -17,6 +16,7 @@ import {
   ProviderQuotaExceededError,
   ValidationFailedError,
 } from "./routeContext";
+import { getOpenAIModelConfig } from "./modelConfig";
 
 function bucketsForSingleCard(card: RewriteCardResponse["card"]): Buckets {
   const buckets = Object.fromEntries(
@@ -32,10 +32,9 @@ export async function rewriteCard(
 ): Promise<RewriteCardResponse> {
   try {
     const result = await generateObject({
-      model: openai(process.env.AI_MODEL || "gpt-4o"),
+      ...getOpenAIModelConfig(),
       schema: RewriteCardModelOutputSchema,
       prompt: buildRewritePrompt(input),
-      temperature: 0.2,
     });
 
     const parsed = RewriteCardModelOutputSchema.safeParse(result.object);

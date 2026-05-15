@@ -120,8 +120,8 @@ export default function Home() {
     }
 
     const timer = window.setInterval(() => {
-      setLoadingStep((step) => (step + 1) % PIPELINE_STEPS.length);
-    }, 900);
+      setLoadingStep((step) => Math.min(step + 1, PIPELINE_STEPS.length));
+    }, 1200);
 
     return () => window.clearInterval(timer);
   }, [isRouting]);

@@ -56,7 +56,8 @@ The goal is to prove the core judgment loop first: messy context in, routed outp
 
 - OPENAI_API_KEY: required for real routing and rewrites.
 - AI_PROVIDER: currently openai.
-- AI_MODEL: optional, defaults to gpt-4o.
+- AI_MODEL: optional, defaults to gpt-5.4-mini.
+- AI_REASONING_EFFORT: optional for GPT-5 models, defaults to low.
 - DATABASE_URL: required for Neon Postgres run history. Use a pooled Neon connection string for Vercel.
 
 If OPENAI_API_KEY is missing, the API returns MISSING_API_KEY. If DATABASE_URL is missing or the migration has not run, routing/history endpoints return DATABASE_UNAVAILABLE. Production routes do not return fake routed cards or fake saved history.

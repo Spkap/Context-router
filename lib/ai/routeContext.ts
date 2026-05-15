@@ -1,4 +1,3 @@
-import { openai } from "@ai-sdk/openai";
 import { generateObject } from "ai";
 import { BUCKET_CONFIG, BUCKET_ORDER } from "../bucket-config";
 import {
@@ -10,6 +9,7 @@ import {
   type ValidationIssue,
 } from "../schemas/routeContext.schema";
 import { hasBlockingIssues, validateBoard } from "../validators/boardValidation";
+import { getOpenAIModelConfig } from "./modelConfig";
 import { buildRouteContextPrompt, buildStrictRetryPrompt } from "./prompts";
 
 export class InvalidModelOutputError extends Error {
@@ -65,12 +65,10 @@ export function logModelFailure(scope: string, error: unknown) {
 }
 
 async function generateBoard(prompt: string) {
-  const model = process.env.AI_MODEL || "gpt-4o";
   const result = await generateObject({
-    model: openai(model),
+    ...getOpenAIModelConfig(),
     schema: RouteContextModelOutputSchema,
     prompt,
-    temperature: 0.2,
   });
 
   return result.object;

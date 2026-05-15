@@ -9,11 +9,15 @@ export const PIPELINE_STEPS = [
   "Running anti-slop check...",
 ];
 
+const FINAL_STEP = "Still routing. Waiting for the model response...";
+
 type LoadingPipelineProps = {
   activeStep: number;
 };
 
 export function LoadingPipeline({ activeStep }: LoadingPipelineProps) {
+  const isFinalStep = activeStep >= PIPELINE_STEPS.length;
+
   return (
     <div className="rounded-md border border-border-subtle bg-bg-surface p-3">
       <div className="mb-2 text-xs font-semibold uppercase tracking-normal text-text-muted">
@@ -45,6 +49,12 @@ export function LoadingPipeline({ activeStep }: LoadingPipelineProps) {
             </li>
           );
         })}
+        {isFinalStep ? (
+          <li className="flex items-center gap-2 text-sm text-text-muted">
+            <CircleDashed className="h-4 w-4 shrink-0 animate-spin text-text-primary" />
+            <span className="font-medium text-text-primary">{FINAL_STEP}</span>
+          </li>
+        ) : null}
       </ol>
     </div>
   );
