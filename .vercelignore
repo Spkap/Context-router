@@ -4,3 +4,9 @@
 .next
 node_modules
 coverage
+docs
+AGENTS.md
+CLAUDE.md
+CLAUDE.MD
+GEMINI.md
+GEMINI.MD
