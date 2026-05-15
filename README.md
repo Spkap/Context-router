@@ -4,11 +4,10 @@
 
 > **Turn your daily founder dump into routed, source-backed outputs. Not another AI slop generator.**
 
-**For:** founders, indie hackers, and solo operators drowning in daily context.
 
 <p>
   <a href="https://context-router.vercel.app/">
-    <img src="https://img.shields.io/badge/Try_Live_Demo-context--router.vercel.app-2563eb?style=for-the-badge&logo=vercel&logoColor=white&labelColor=000000" alt="Try Live Demo" height="40"/>
+    <img src="https://img.shields.io/badge/Try_Live_Demo-context--router.vercel.app-2563eb?style=for-the-badge&logo=vercel&logoColor=white&labelColor=000000" alt="Try Live Demo" height="30"/>
   </a>
 </p>
 
@@ -205,7 +204,7 @@ This is an MVP focused on the routing loop. It proves whether a raw daily dump c
 
 <p align="center">
   <a href="https://context-router.vercel.app/">
-    <img src="https://img.shields.io/badge/Try_Live_Demo-context--router.vercel.app-2563eb?style=for-the-badge&logo=vercel&logoColor=white&labelColor=000000" alt="Try Live Demo" height="40"/>
+    <img src="https://img.shields.io/badge/Try_Live_Demo-context--router.vercel.app-2563eb?style=for-the-badge&logo=vercel&logoColor=white&labelColor=000000" alt="Try Live Demo" height="30"/>
   </a>
 </p>
 
