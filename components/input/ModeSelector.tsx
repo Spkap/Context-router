@@ -9,7 +9,7 @@ type ModeSelectorProps = {
 export function ModeSelector({ value, onChange }: ModeSelectorProps) {
   return (
     <div>
-      <div className="mb-2 text-sm font-semibold text-zinc-950">Mode</div>
+      <div className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-text-muted">Mode</div>
       <div className="grid grid-cols-2 gap-2">
         {MODE_OPTIONS.map((mode) => (
           <button
@@ -17,10 +17,10 @@ export function ModeSelector({ value, onChange }: ModeSelectorProps) {
             type="button"
             onClick={() => onChange(mode.value)}
             className={
-              "h-9 rounded-md border px-2 text-sm font-medium transition " +
+              "h-8 rounded border px-2 text-xs font-medium transition " +
               (value === mode.value
-                ? "border-zinc-950 bg-zinc-950 text-white"
-                : "border-zinc-200 bg-white text-zinc-700 hover:border-zinc-300 hover:bg-zinc-50")
+                ? "border-text-primary bg-text-primary text-bg-surface"
+                : "border-border-subtle bg-bg-surface text-text-muted hover:border-border-strong hover:bg-bg-surface-hover")
             }
           >
             {mode.label}

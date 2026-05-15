@@ -54,13 +54,18 @@ export function CopyButton({ text, label = "Copy", compact }: CopyButtonProps) {
     <button
       type="button"
       onClick={handleCopy}
+      title={label}
+      aria-label={label}
       className={
-        "inline-flex items-center justify-center gap-2 rounded-md border border-zinc-200 bg-white text-sm font-medium text-zinc-800 shadow-sm transition hover:border-zinc-300 hover:bg-zinc-50 " +
-        (compact ? "h-8 px-2" : "h-9 px-3")
+        "inline-flex shrink-0 items-center justify-center rounded border border-border-subtle bg-bg-surface text-text-muted transition hover:border-border-strong hover:bg-bg-surface-hover hover:text-text-primary " +
+        (compact ? "h-6 w-6" : "h-8 w-8")
       }
     >
-      {copied ? <Check className="h-4 w-4 text-emerald-600" /> : <Copy className="h-4 w-4" />}
-      <span>{copied ? "Copied" : label}</span>
+      {copied ? (
+        <Check className={compact ? "h-3 w-3 text-emerald-500" : "h-4 w-4 text-emerald-500"} />
+      ) : (
+        <Copy className={compact ? "h-3 w-3" : "h-4 w-4"} />
+      )}
     </button>
   );
 }

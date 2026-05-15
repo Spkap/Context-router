@@ -6,21 +6,21 @@ type VoiceSamplesTextareaProps = {
 export function VoiceSamplesTextarea({ value, onChange }: VoiceSamplesTextareaProps) {
   return (
     <label className="block">
-      <div className="mb-2 flex items-center justify-between gap-3">
-        <span className="text-sm font-semibold text-zinc-950">
+      <div className="mb-1.5 flex items-center justify-between gap-3">
+        <span className="text-xs font-semibold uppercase tracking-wide text-text-muted">
           Writing Samples
         </span>
-        <span className="text-xs text-zinc-500">{value.length}/3000</span>
+        <span className="text-[11px] tabular-nums text-text-muted">{value.length}/3000</span>
       </div>
       <textarea
         value={value}
         maxLength={3000}
         onChange={(event) => onChange(event.target.value)}
-        placeholder="Paste 3-5 tweets, LinkedIn posts, or notes written in your own voice. ContextRouter will use these to avoid generic AI tone."
-        className="min-h-[130px] w-full resize-y rounded-md border border-zinc-200 bg-white px-3 py-3 text-sm leading-6 text-zinc-950 shadow-sm outline-none transition placeholder:text-zinc-400 focus:border-zinc-400 focus:ring-2 focus:ring-zinc-200"
+        placeholder="3–5 posts in your own voice (tweets, LinkedIn, notes)..."
+        className="min-h-[90px] w-full resize-y rounded border border-border-subtle bg-bg-canvas px-3 py-2.5 font-mono text-xs leading-[1.7] text-text-primary outline-none transition placeholder:text-text-muted/40 focus:border-border-strong focus:ring-1 focus:ring-border-strong"
       />
-      <p className="mt-2 text-xs text-zinc-500">
-        No fine-tuning. Just voice matching from examples.
+      <p className="mt-1.5 text-[11px] text-text-muted/70">
+        No fine-tuning. Voice matching from examples.
       </p>
     </label>
   );

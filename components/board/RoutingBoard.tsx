@@ -16,25 +16,25 @@ export function RoutingBoard({
   onSelectCard,
 }: RoutingBoardProps) {
   return (
-    <main className="min-w-0 bg-white p-4">
-      <div className="mb-4 flex flex-col gap-2 border-b border-zinc-200 pb-4 md:flex-row md:items-end md:justify-between">
+    <main className="min-w-0 bg-bg-canvas">
+      <div className="mb-3 flex flex-col gap-1 border-b border-border-subtle pb-3 md:flex-row md:items-center md:justify-between">
         <div>
-          <h2 className="text-base font-semibold text-zinc-950">
+          <p className="text-xs font-semibold uppercase tracking-wide text-text-muted">
             Routing Board
-          </h2>
-          <p className="text-sm text-zinc-600">
+          </p>
+          <p className="mt-0.5 text-sm text-text-muted">
             {result
               ? result.run.summary
               : "Paste notes, route context, then review the buckets."}
           </p>
         </div>
         {result ? (
-          <div className="text-xs leading-5 text-zinc-500">
-            {result.atoms.length} atoms extracted
+          <div className="shrink-0 text-[11px] tabular-nums text-text-muted">
+            {result.atoms.length} atoms
           </div>
         ) : null}
       </div>
-      <div className="grid grid-cols-1 gap-3 xl:grid-cols-2 2xl:grid-cols-3">
+      <div className="flex flex-col gap-3">
         {BUCKET_ORDER.map((bucket) => (
           <BucketColumn
             key={bucket}

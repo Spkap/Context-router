@@ -6,9 +6,9 @@ type RiskFlagsProps = {
 };
 
 const riskClasses = {
-  low: "border-emerald-200 bg-emerald-50 text-emerald-700",
-  medium: "border-amber-200 bg-amber-50 text-amber-800",
-  high: "border-rose-200 bg-rose-50 text-rose-700",
+  low: "border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-500/30 dark:bg-emerald-500/10 dark:text-emerald-400",
+  medium: "border-amber-200 bg-amber-50 text-amber-800 dark:border-amber-500/30 dark:bg-amber-500/10 dark:text-amber-400",
+  high: "border-rose-200 bg-rose-50 text-rose-700 dark:border-rose-500/30 dark:bg-rose-500/10 dark:text-rose-400",
 };
 
 export function RiskFlags({ card, issues }: RiskFlagsProps) {
@@ -16,7 +16,7 @@ export function RiskFlags({ card, issues }: RiskFlagsProps) {
 
   return (
     <div>
-      <h3 className="mb-2 text-sm font-semibold text-zinc-950">Risk flags</h3>
+      <h3 className="mb-2 text-sm font-semibold text-text-primary">Risk flags</h3>
       <div className="flex flex-wrap gap-2">
         <span
           className={
@@ -29,7 +29,7 @@ export function RiskFlags({ card, issues }: RiskFlagsProps) {
         {card.sourceAtomIds.map((atomId) => (
           <span
             key={atomId}
-            className="rounded-full border border-zinc-200 bg-zinc-50 px-2.5 py-1 text-xs font-medium text-zinc-600"
+            className="rounded-full border border-border-subtle bg-bg-surface px-2.5 py-1 font-mono text-xs font-medium text-text-muted"
           >
             {atomId}
           </span>

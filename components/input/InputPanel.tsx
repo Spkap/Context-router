@@ -36,8 +36,9 @@ export function InputPanel({
   const isDisabled = dailyDump.trim().length < 10 || dailyDump.length > 5000;
 
   return (
-    <aside className="space-y-4 border-b border-zinc-200 bg-zinc-50 p-4 lg:border-b-0 lg:border-r">
-      <div className="flex flex-wrap items-center justify-between gap-2">
+    <aside className="flex flex-col gap-4 p-4">
+      {/* Utility row — compact secondary actions */}
+      <div className="flex items-center gap-2 border-b border-border-subtle pb-3">
         <SampleDataButton onUseSample={onUseSample} />
         {history.length > 0 ? (
           <select
@@ -47,25 +48,30 @@ export function InputPanel({
               const entry = history.find(
                 (item) => item.runId === event.target.value,
               );
-
               if (entry) {
                 onLoadHistory(entry);
                 event.target.value = "";
               }
             }}
-            className="h-9 max-w-full rounded-md border border-zinc-200 bg-white px-2 text-sm text-zinc-700 shadow-sm outline-none focus:border-zinc-400"
+            className="h-7 min-w-0 flex-1 rounded border border-border-subtle bg-bg-surface px-2 text-[11px] text-text-muted outline-none focus:border-border-strong"
           >
             <option value="">Recent runs</option>
             {history.map((entry) => (
               <option key={entry.runId} value={entry.runId}>
-                {new Date(entry.createdAt).toLocaleString()} - {entry.mode}
+                {new Date(entry.createdAt).toLocaleString()} — {entry.mode}
               </option>
             ))}
           </select>
         ) : null}
       </div>
+
+      {/* Daily Dump */}
       <DailyDumpTextarea value={dailyDump} onChange={onDailyDumpChange} />
+
+      {/* Writing Samples */}
       <VoiceSamplesTextarea value={voiceSamples} onChange={onVoiceSamplesChange} />
+
+      {/* Mode + Route */}
       <ModeSelector value={mode} onChange={onModeChange} />
       <RouteContextButton
         disabled={isDisabled}

@@ -15,8 +15,8 @@ type LoadingPipelineProps = {
 
 export function LoadingPipeline({ activeStep }: LoadingPipelineProps) {
   return (
-    <div className="rounded-md border border-zinc-200 bg-white p-3 shadow-sm">
-      <div className="mb-2 text-xs font-semibold uppercase tracking-normal text-zinc-500">
+    <div className="rounded-md border border-border-subtle bg-bg-surface p-3">
+      <div className="mb-2 text-xs font-semibold uppercase tracking-normal text-text-muted">
         Routing pipeline
       </div>
       <ol className="space-y-2">
@@ -27,19 +27,19 @@ export function LoadingPipeline({ activeStep }: LoadingPipelineProps) {
           return (
             <li
               key={step}
-              className="flex items-center gap-2 text-sm text-zinc-700"
+              className="flex items-center gap-2 text-sm text-text-muted"
             >
               {isDone ? (
-                <CheckCircle2 className="h-4 w-4 text-emerald-600" />
+                <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-500" />
               ) : (
                 <CircleDashed
                   className={
-                    "h-4 w-4 " +
-                    (isActive ? "animate-spin text-zinc-900" : "text-zinc-300")
+                    "h-4 w-4 shrink-0 " +
+                    (isActive ? "animate-spin text-text-primary" : "text-border-strong")
                   }
                 />
               )}
-              <span className={isActive ? "font-medium text-zinc-950" : ""}>
+              <span className={isActive ? "font-medium text-text-primary" : ""}>
                 {step}
               </span>
             </li>

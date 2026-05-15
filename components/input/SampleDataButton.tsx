@@ -1,4 +1,4 @@
-import { Sparkles } from "lucide-react";
+import { FileText } from "lucide-react";
 
 type SampleDataButtonProps = {
   onUseSample: () => void;
@@ -9,10 +9,10 @@ export function SampleDataButton({ onUseSample }: SampleDataButtonProps) {
     <button
       type="button"
       onClick={onUseSample}
-      className="inline-flex h-9 items-center justify-center gap-2 rounded-md border border-zinc-200 bg-white px-3 text-sm font-medium text-zinc-800 shadow-sm transition hover:border-zinc-300 hover:bg-zinc-50"
+      className="inline-flex h-7 items-center gap-1.5 rounded border border-border-subtle bg-bg-surface px-2.5 text-[11px] font-medium text-text-muted transition hover:border-border-strong hover:text-text-primary"
     >
-      <Sparkles className="h-4 w-4" />
-      Use sample founder day
+      <FileText className="h-3 w-3" />
+      Sample data
     </button>
   );
 }

@@ -40,7 +40,7 @@ export function RewriteActions({
 
   return (
     <div>
-      <h3 className="mb-2 text-sm font-semibold text-zinc-950">Rewrite</h3>
+      <h3 className="mb-2 text-sm font-semibold text-text-primary">Rewrite</h3>
       <div className="flex flex-wrap gap-2">
         {actions.map((action) => {
           const isLoading = loadingAction === action;
@@ -51,12 +51,12 @@ export function RewriteActions({
               type="button"
               disabled={Boolean(loadingAction)}
               onClick={() => onRewrite(action)}
-              className="inline-flex h-9 items-center justify-center gap-2 rounded-md border border-zinc-200 bg-white px-3 text-sm font-medium text-zinc-800 shadow-sm transition hover:border-zinc-300 hover:bg-zinc-50 disabled:cursor-wait disabled:opacity-60"
+              className="inline-flex h-9 items-center justify-center gap-2 rounded-md border border-border-strong bg-bg-surface px-3 text-sm font-medium text-text-primary shadow-sm transition hover:border-text-primary hover:bg-bg-surface-hover disabled:cursor-wait disabled:opacity-60"
             >
               {isLoading ? (
                 <Loader2 className="h-4 w-4 animate-spin" />
               ) : (
-                <Wand2 className="h-4 w-4" />
+                <Wand2 className="h-4 w-4 text-text-muted" />
               )}
               {actionLabels[action]}
             </button>

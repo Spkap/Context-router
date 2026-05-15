@@ -233,48 +233,63 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="flex h-screen flex-col overflow-hidden bg-bg-canvas">
       <Header />
-      <div className="mx-auto grid max-w-[1800px] grid-cols-1 overflow-hidden border-x border-zinc-200 bg-white lg:min-h-[calc(100vh-73px)] lg:grid-cols-[320px_minmax(0,1fr)_360px]">
-        <InputPanel
-          dailyDump={dailyDump}
-          voiceSamples={voiceSamples}
-          mode={mode}
-          isRouting={isRouting}
-          history={history}
-          onDailyDumpChange={setDailyDump}
-          onVoiceSamplesChange={setVoiceSamples}
-          onModeChange={setMode}
-          onUseSample={useSample}
-          onRoute={routeCurrentContext}
-          onLoadHistory={loadRun}
-        />
-        <div className="min-w-0">
-          <div className="space-y-3 border-b border-zinc-200 bg-zinc-50 p-4">
-            {error ? <StatusMessage tone="error" message={error} /> : null}
-            {routingResult && !error ? (
-              <StatusMessage
-                tone="success"
-                message="Board routed. Review source support before copying anything public."
-              />
-            ) : null}
-            {isRouting ? <LoadingPipeline activeStep={loadingStep} /> : null}
-          </div>
-          <RoutingBoard
-            result={routingResult}
-            selectedCardId={selectedCardId}
-            atomsById={atomsById}
-            onSelectCard={setSelectedCardId}
+      <div className="mx-auto grid w-full max-w-[1800px] flex-1 grid-cols-1 overflow-hidden border-x border-border-subtle lg:grid-cols-[320px_minmax(0,1fr)_380px]">
+        
+        {/* Left Column: Input */}
+        <div className="flex h-full flex-col overflow-y-auto border-r border-border-subtle bg-bg-surface">
+          <InputPanel
+            dailyDump={dailyDump}
+            voiceSamples={voiceSamples}
+            mode={mode}
+            isRouting={isRouting}
+            history={history}
+            onDailyDumpChange={setDailyDump}
+            onVoiceSamplesChange={setVoiceSamples}
+            onModeChange={setMode}
+            onUseSample={useSample}
+            onRoute={routeCurrentContext}
+            onLoadHistory={loadRun}
           />
         </div>
-        <DetailPanel
-          card={selectedCard}
-          atomsById={atomsById}
-          validationIssues={routingResult?.validationIssues || []}
-          loadingAction={rewritingAction}
-          rewriteError={rewriteError}
-          onRewrite={rewriteSelectedCard}
-        />
+
+        {/* Center Column: Board */}
+        <div className="flex h-full flex-col overflow-y-auto bg-bg-canvas">
+          {(error || (routingResult && !error) || isRouting) ? (
+            <div className="shrink-0 space-y-3 border-b border-border-subtle p-4">
+              {error ? <StatusMessage tone="error" message={error} /> : null}
+              {routingResult && !error ? (
+                <StatusMessage
+                  tone="success"
+                  message="Board routed. Review source support before copying anything public."
+                />
+              ) : null}
+              {isRouting ? <LoadingPipeline activeStep={loadingStep} /> : null}
+            </div>
+          ) : null}
+          <div className="flex-1 p-4">
+            <RoutingBoard
+              result={routingResult}
+              selectedCardId={selectedCardId}
+              atomsById={atomsById}
+              onSelectCard={setSelectedCardId}
+            />
+          </div>
+        </div>
+
+        {/* Right Column: Detail */}
+        <div className="flex h-full flex-col overflow-y-auto border-l border-border-subtle bg-bg-surface">
+          <DetailPanel
+            card={selectedCard}
+            atomsById={atomsById}
+            validationIssues={routingResult?.validationIssues || []}
+            loadingAction={rewritingAction}
+            rewriteError={rewriteError}
+            onRewrite={rewriteSelectedCard}
+          />
+        </div>
+
       </div>
     </div>
   );

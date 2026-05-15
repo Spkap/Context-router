@@ -6,16 +6,16 @@ type DailyDumpTextareaProps = {
 export function DailyDumpTextarea({ value, onChange }: DailyDumpTextareaProps) {
   return (
     <label className="block">
-      <div className="mb-2 flex items-center justify-between gap-3">
-        <span className="text-sm font-semibold text-zinc-950">Daily Dump</span>
-        <span className="text-xs text-zinc-500">{value.length}/5000</span>
+      <div className="mb-1.5 flex items-center justify-between gap-3">
+        <span className="text-xs font-semibold uppercase tracking-wide text-text-muted">Daily Dump</span>
+        <span className="text-[11px] tabular-nums text-text-muted">{value.length}/5000</span>
       </div>
       <textarea
         value={value}
         maxLength={5000}
         onChange={(event) => onChange(event.target.value)}
-        placeholder="Paste anything from your day: meetings, notes, product updates, bugs fixed, user feedback, thoughts, wins, reminders, follow-ups, private details, random ideas..."
-        className="min-h-[260px] w-full resize-y rounded-md border border-zinc-200 bg-white px-3 py-3 text-sm leading-6 text-zinc-950 shadow-sm outline-none transition placeholder:text-zinc-400 focus:border-zinc-400 focus:ring-2 focus:ring-zinc-200"
+        placeholder="Meetings, notes, wins, ideas, follow-ups, anything..."
+        className="min-h-[160px] w-full resize-y rounded border border-border-subtle bg-bg-canvas px-3 py-2.5 font-mono text-xs leading-[1.7] text-text-primary outline-none transition placeholder:text-text-muted/40 focus:border-border-strong focus:ring-1 focus:ring-border-strong"
       />
     </label>
   );

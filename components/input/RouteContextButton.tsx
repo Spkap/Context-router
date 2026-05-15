@@ -16,7 +16,7 @@ export function RouteContextButton({
       type="button"
       disabled={disabled || isRouting}
       onClick={onClick}
-      className="inline-flex h-10 w-full items-center justify-center gap-2 rounded-md bg-zinc-950 px-4 text-sm font-semibold text-white shadow-sm transition hover:bg-zinc-800 disabled:cursor-not-allowed disabled:bg-zinc-300"
+      className="inline-flex h-9 w-full items-center justify-center gap-2 rounded bg-text-primary px-4 text-sm font-medium text-bg-surface transition hover:bg-text-primary/90 disabled:cursor-not-allowed disabled:bg-border-subtle disabled:text-text-muted"
     >
       {isRouting ? (
         <Loader2 className="h-4 w-4 animate-spin" />
