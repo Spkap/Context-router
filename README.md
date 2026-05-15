@@ -106,15 +106,6 @@ flowchart TD
 
 ---
 
-## Key Features
-
-- **Capture.** Paste your raw notes, add writing samples if you want voice matching, and pick a mode for your day: *Founder*, *Student Builder*, *Operator*, or *Creator*.
-- **Route.** Every note lands in one of seven buckets: X Post, LinkedIn, Follow-up, Task, Investor Update, Private, or Leave Out. *Leave Out* is a real destination, not a fallback. Weak, generic, or unsafe notes get filtered, not polished.
-- **Trace.** Every card shows its receipts: the notes it came from, a signal score, a confidence rating, and why it landed where it did.
-- **Guard.** Privacy checks keep private and internal notes out of public posts. Source checks catch unsupported claims. If the model slips, it gets one strict retry before anything reaches you.
-- **Refine.** Edit drafts inline, or hit a single rewrite action: *sharper*, *shorter*, *make public-safe*, *more like my voice*.
-- **Persist.** Recent runs save to Postgres with a local cache for instant reloads. Every failure mode (missing key, model error, quota, DB outage) surfaces with a clear message, not a silent break.
-
 ## How It Works
 
 ### Request Lifecycle
@@ -175,13 +166,14 @@ flowchart TD
 
 **Model:** `gpt-5.4-mini` via the Vercel AI SDK with structured output enforced by Zod. GPT-5 model IDs use reasoning effort; others fall back to low temperature.
 
-## API Surface
+## Key Features
 
-| Route | Method | Purpose |
-| --- | --- | --- |
-| `/api/route-context` | `POST` | Route a daily dump into snippets, buckets, drafts, and checks. |
-| `/api/rewrite-card` | `POST` | Rewrite one card while preserving source support and safety. |
-| `/api/runs` | `GET` | Load recent persisted runs. |
+- **Capture.** Paste your raw notes, add writing samples if you want voice matching, and pick a mode for your day: *Founder*, *Student Builder*, *Operator*, or *Creator*.
+- **Route.** Every note lands in one of seven buckets: X Post, LinkedIn, Follow-up, Task, Investor Update, Private, or Leave Out. *Leave Out* is a real destination, not a fallback. Weak, generic, or unsafe notes get filtered, not polished.
+- **Trace.** Every card shows its receipts: the notes it came from, a signal score, a confidence rating, and why it landed where it did.
+- **Guard.** Privacy checks keep private and internal notes out of public posts. Source checks catch unsupported claims. If the model slips, it gets one strict retry before anything reaches you.
+- **Refine.** Edit drafts inline, or hit a single rewrite action: *sharper*, *shorter*, *make public-safe*, *more like my voice*.
+- **Persist.** Recent runs save to Postgres with a local cache for instant reloads. Every failure mode (missing key, model error, quota, DB outage) surfaces with a clear message, not a silent break.
 
 ## Tradeoffs & Roadmap
 
