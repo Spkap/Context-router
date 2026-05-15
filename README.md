@@ -26,7 +26,36 @@ ContextRouter asks:
 
 The part I care about most is judgment: deciding what each piece of context should become, and what should not become content at all.
 
+## A Day in the Life
+
+You end the day with notes that look like this:
+
+> talked to founder running meta ads for a DTC brand
+> they spend 4-5 hrs/week moving data between tools
+> "we have dashboards but still need ops people to make reports"
+> follow up with Rohan, ask if we can watch his weekly flow
+> task: turn this into 6 design partner questions
+> investor-safe: clear pain in DTC reporting workflow
+> private: do not mention company name publicly
+> leave out: had coffee, tweaked landing page copy
+
+ContextRouter routes it into:
+
+| Bucket | Card |
+| :--- | :--- |
+| **X Post** | *Software has become the system of record, but humans are still the system of action.* |
+| **LinkedIn** | Customer discovery keeps pointing to the same gap: teams have dashboards, but still need people to stitch work across tools. |
+| **Follow-up** | Reply to Rohan. Ask if we can watch his weekly reporting flow next week. |
+| **Task** | Turn customer conversation into 6 design partner questions about reporting ops. |
+| **Investor Update** | Found clear DTC reporting pain where manual work happens between ads, reports, and client comms. |
+| **Private** | Company name, ad spend, client names. Do not mention publicly. |
+| **Leave Out** | Coffee + landing page copy tweaks. Low signal, not post-worthy. |
+
+One messy dump in. Seven decisions out. Judgment visible, sources traced, noise filtered.
+
 ---
+
+## See It in Action
 
 ### End-to-End Flow
 
@@ -126,8 +155,6 @@ sequenceDiagram
 
 ### Validation Gates
 
-The judgment layer. Every card runs through these before it reaches the board.
-
 ```mermaid
 flowchart TD
   A["Model Output"] --> B{"Source Check"}
@@ -164,16 +191,22 @@ flowchart TD
 
 This is an MVP focused on the routing loop. It proves whether a raw daily dump can become useful, source-backed outputs with visible judgment.
 
-| Out of scope (for now) | What's next |
+| Out of scope | What's next |
 | --- | --- |
 | Auth, accounts, teams, billing | Gmail / Calendar / Notion import |
 | Publishing integrations (X, LinkedIn, etc.) | Voice memo input |
 | Auto-posting, scheduling, analytics | Stronger voice matching from past posts |
-| Multi-agent backend (separate extraction/privacy/routing/critique calls) | Markdown / JSON export |
+| Multi-agent backend | Markdown / JSON export |
 | Long-term knowledge storage | Shareable run detail page |
-| File uploads, voice transcription | Privacy preview before sending to the model |
+| File uploads, voice transcription | Privacy preview before sending to model |
 | Full admin interface | Eval set for routing behavior |
 
 ---
 
-**Try it:** [context-router.vercel.app](https://context-router.vercel.app/). Pick a sample dump from the dropdown to see routing in action.
+<p align="center">
+  <a href="https://context-router.vercel.app/">
+    <img src="https://img.shields.io/badge/Try_Live_Demo-context--router.vercel.app-2563eb?style=for-the-badge&logo=vercel&logoColor=white&labelColor=000000" alt="Try Live Demo" height="40"/>
+  </a>
+</p>
+
+<p align="center"><i>Pick a sample dump from the dropdown to see routing in action.</i></p>
