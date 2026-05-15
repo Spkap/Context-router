@@ -1,0 +1,271 @@
+{
+  "run": {
+    "mode": "founder",
+    "inputSummary": "Founder day with customer pain, product work, follow-up, private note, and weak noise.",
+    "summary": "Strongest signals are the agent traces opinion, Meta ads reporting pain, and Canopy selection."
+  },
+  "atoms": [
+    {
+      "id": "atom_001",
+      "sourceSnippet": "talked to a founder using Meta ads",
+      "cleanedMeaning": "The user spoke with a founder who uses Meta ads.",
+      "type": "meeting",
+      "sensitivity": "public_safe",
+      "signalScore": 76,
+      "confidence": 0.92,
+      "routingNotes": null
+    },
+    {
+      "id": "atom_002",
+      "sourceSnippet": "their team spends hours moving campaign data into reports manually",
+      "cleanedMeaning": "The founder's team manually moves campaign data into reports.",
+      "type": "user_feedback",
+      "sensitivity": "public_safe",
+      "signalScore": 86,
+      "confidence": 0.9,
+      "routingNotes": null
+    },
+    {
+      "id": "atom_003",
+      "sourceSnippet": "worked on ReplayX incident pipeline",
+      "cleanedMeaning": "The user worked on the ReplayX incident pipeline.",
+      "type": "product_work",
+      "sensitivity": "public_safe",
+      "signalScore": 68,
+      "confidence": 0.89,
+      "routingNotes": null
+    },
+    {
+      "id": "atom_004",
+      "sourceSnippet": "got selected for Founders Inc Canopy",
+      "cleanedMeaning": "The user was selected for Founders Inc Canopy.",
+      "type": "achievement",
+      "sensitivity": "public_safe",
+      "signalScore": 82,
+      "confidence": 0.94,
+      "routingNotes": null
+    },
+    {
+      "id": "atom_005",
+      "sourceSnippet": "need to reply to Bella after lunch",
+      "cleanedMeaning": "The user needs to reply to Bella after lunch.",
+      "type": "reminder",
+      "sensitivity": "internal_only",
+      "signalScore": 72,
+      "confidence": 0.9,
+      "routingNotes": null
+    },
+    {
+      "id": "atom_006",
+      "sourceSnippet": "thinking agents need traces, not just autonomy",
+      "cleanedMeaning": "The user believes AI agents need traces, not only autonomy.",
+      "type": "opinion",
+      "sensitivity": "public_safe",
+      "signalScore": 91,
+      "confidence": 0.93,
+      "routingNotes": null
+    },
+    {
+      "id": "atom_007",
+      "sourceSnippet": "do not mention investor call publicly",
+      "cleanedMeaning": "Investor call details should not be mentioned publicly.",
+      "type": "private_note",
+      "sensitivity": "private",
+      "signalScore": 88,
+      "confidence": 0.98,
+      "routingNotes": null
+    },
+    {
+      "id": "atom_008",
+      "sourceSnippet": "had coffee and coded for a bit",
+      "cleanedMeaning": "The user had coffee and coded for a bit.",
+      "type": "noise",
+      "sensitivity": "public_safe",
+      "signalScore": 18,
+      "confidence": 0.85,
+      "routingNotes": null
+    }
+  ],
+  "buckets": {
+    "x_post": [
+      {
+        "id": "card_001",
+        "bucket": "x_post",
+        "title": "Agents Need Traces",
+        "draft": "AI agents do not need more autonomy first.\n\nThey need better traces.\n\nIf software acts for you, you should be able to see what it did, why it did it, where it guessed, and how to reverse it.",
+        "sourceAtomIds": ["atom_006"],
+        "claims": [
+          {
+            "text": "The user believes agents need traces before more autonomy.",
+            "sourceAtomIds": ["atom_006"]
+          }
+        ],
+        "reason": "This is a clear public-safe opinion with a specific angle.",
+        "riskLevel": "low",
+        "qualityScores": {
+          "specificity": "high",
+          "privacyRisk": "low",
+          "slopRisk": "low",
+          "voiceMatch": "medium",
+          "supportLevel": "high"
+        },
+        "suggestedActions": ["make_sharper", "less_formal", "cut_30", "make_linkedin_version"]
+      }
+    ],
+    "linkedin": [
+      {
+        "id": "card_002",
+        "bucket": "linkedin",
+        "title": "Manual Reporting Is Still Work",
+        "draft": "One founder using Meta ads said their team still spends hours moving campaign data into reports manually.\n\nThat is the gap I keep seeing: teams do not only need dashboards. They need software that can carry the operational work with evidence.",
+        "sourceAtomIds": ["atom_001", "atom_002"],
+        "claims": [
+          {
+            "text": "A founder using Meta ads reported manual campaign reporting work.",
+            "sourceAtomIds": ["atom_001", "atom_002"]
+          }
+        ],
+        "reason": "This is a concrete user pain that can become a public-safe professional post.",
+        "riskLevel": "low",
+        "qualityScores": {
+          "specificity": "high",
+          "privacyRisk": "low",
+          "slopRisk": "low",
+          "voiceMatch": "medium",
+          "supportLevel": "high"
+        },
+        "suggestedActions": ["make_sharper", "less_formal", "cut_30", "make_x_version"]
+      }
+    ],
+    "follow_up": [
+      {
+        "id": "card_003",
+        "bucket": "follow_up",
+        "title": "Reply To Bella",
+        "draft": "Hey Bella, anytime after lunch works for me. Please let me know what time is convenient.",
+        "sourceAtomIds": ["atom_005"],
+        "claims": [],
+        "reason": "The source is a direct follow-up reminder.",
+        "riskLevel": "low",
+        "qualityScores": {
+          "specificity": "high",
+          "privacyRisk": "low",
+          "slopRisk": "low",
+          "voiceMatch": "medium",
+          "supportLevel": "high"
+        },
+        "suggestedActions": ["less_formal", "cut_30"]
+      }
+    ],
+    "task": [
+      {
+        "id": "card_004",
+        "bucket": "task",
+        "title": "Turn Meta Ads Pain Into Questions",
+        "draft": "Write 5 design partner questions about where Meta ads teams manually move campaign data into reports.",
+        "sourceAtomIds": ["atom_002"],
+        "claims": [],
+        "reason": "The user feedback is specific enough to become a product discovery task.",
+        "riskLevel": "low",
+        "qualityScores": {
+          "specificity": "high",
+          "privacyRisk": "low",
+          "slopRisk": "low",
+          "voiceMatch": "medium",
+          "supportLevel": "high"
+        },
+        "suggestedActions": ["make_sharper", "cut_30"]
+      }
+    ],
+    "investor_update": [
+      {
+        "id": "card_005",
+        "bucket": "investor_update",
+        "title": "Concise Founder Update",
+        "draft": "This week:\n- Selected for Founders Inc Canopy.\n- Worked on the ReplayX incident pipeline.\n- Spoke with a founder using Meta ads and found a manual reporting pain around campaign data.\n\nNext focus: turn this into sharper design partner questions.",
+        "sourceAtomIds": ["atom_001", "atom_002", "atom_003", "atom_004"],
+        "claims": [
+          {
+            "text": "The user was selected for Founders Inc Canopy.",
+            "sourceAtomIds": ["atom_004"]
+          },
+          {
+            "text": "The user worked on the ReplayX incident pipeline.",
+            "sourceAtomIds": ["atom_003"]
+          },
+          {
+            "text": "The user spoke with a founder using Meta ads about manual reporting pain.",
+            "sourceAtomIds": ["atom_001", "atom_002"]
+          }
+        ],
+        "reason": "These are factual, concise progress and learning points.",
+        "riskLevel": "low",
+        "qualityScores": {
+          "specificity": "high",
+          "privacyRisk": "low",
+          "slopRisk": "low",
+          "voiceMatch": "medium",
+          "supportLevel": "high"
+        },
+        "suggestedActions": ["cut_30", "make_investor_safe"]
+      }
+    ],
+    "private": [
+      {
+        "id": "card_006",
+        "bucket": "private",
+        "title": "Do Not Mention Investor Call",
+        "draft": "Do not mention the investor call publicly. Keep any investor-specific details out of posts and updates unless they are rewritten into non-identifying private tasks.",
+        "sourceAtomIds": ["atom_007"],
+        "claims": [],
+        "reason": "The source explicitly says this should not be public.",
+        "riskLevel": "high",
+        "qualityScores": {
+          "specificity": "high",
+          "privacyRisk": "high",
+          "slopRisk": "low",
+          "voiceMatch": "medium",
+          "supportLevel": "high"
+        },
+        "suggestedActions": ["make_public_safe"]
+      }
+    ],
+    "leave_out": [
+      {
+        "id": "card_007",
+        "bucket": "leave_out",
+        "title": "Coffee And Coded",
+        "draft": "Leave out: \"had coffee and coded for a bit\". It is too generic to become a useful post, task, follow-up, or update.",
+        "sourceAtomIds": ["atom_008"],
+        "claims": [],
+        "reason": "Low signal and no specific outcome.",
+        "riskLevel": "low",
+        "qualityScores": {
+          "specificity": "low",
+          "privacyRisk": "low",
+          "slopRisk": "low",
+          "voiceMatch": "medium",
+          "supportLevel": "high"
+        },
+        "suggestedActions": []
+      }
+    ]
+  },
+  "emptyBucketReasons": {
+    "x_post": null,
+    "linkedin": null,
+    "follow_up": null,
+    "task": null,
+    "investor_update": null,
+    "private": null,
+    "leave_out": null
+  },
+  "qualityReport": {
+    "strongestSignal": "The agents need traces opinion is specific and public-safe.",
+    "weakestSignal": "Coffee and coding is too generic without an outcome.",
+    "privacyWarningsCount": 1,
+    "unsupportedClaimsCount": 0,
+    "slopWarningsCount": 0
+  },
+  "validationIssues": []
+}
