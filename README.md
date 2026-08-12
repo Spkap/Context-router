@@ -223,3 +223,7 @@ This is an MVP focused on the routing loop. It proves whether a raw daily dump c
   <img src="https://img.shields.io/badge/Neon-Postgres-00e599" alt="Neon Postgres"/>
   <img src="https://img.shields.io/badge/license-MIT-blue" alt="License"/>
 </p>
+
+## License
+
+[MIT](LICENSE)
